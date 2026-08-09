@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>بينا | الخير يتبادل</title>
+  <meta name="description" content="بينا منصة مجتمعية سعودية لتبادل المساعدة والمهارات بدون مقابل مادي." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="#home" aria-label="بينا">
+        <span class="brand-mark">بينا</span>
+        <small>الخير يتبادل</small>
+      </a>
+      <button class="menu-toggle" aria-label="فتح القائمة">☰</button>
+      <div class="nav-links">
+        <a class="active" href="#home">الرئيسية</a>
+        <a href="#need">أحتاج مساعدة</a>
+        <a href="#offer">أقدر أساعد</a>
+        <a href="#categories">التصنيفات</a>
+        <a href="#how">كيف تعمل بينا؟</a>
+        <a href="#about">عن بينا</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn ghost" data-messages>الرسائل</button><button class="btn ghost" data-open="login">تسجيل دخول</button>
+        <button class="btn primary" data-open="signup">سجل الآن</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero container section-pad">
+      <div class="hero-copy">
+        <span class="eyebrow">من الناس... للناس</span>
+        <h1>مو كل شيء يحتاج فلوس...</h1>
+        <p class="lead">أحيانًا اللي عندك، هو بالضبط اللي يحتاجه غيرك. واللي عنده، يمكن يكون اللي تحتاجه أنت.</p>
+        <h2>بينا نساعد بعض.</h2>
+        <p>قدّم اللي تعرفه، واطلب اللي تحتاجه... بدون مقابل مادي.</p>
+        <div class="hero-actions">
+          <button class="btn primary big" data-scroll="#need">أحتاج مساعدة</button>
+          <button class="btn soft big" data-scroll="#offer">أقدر أساعد</button>
+        </div>
+        <div class="trust-line">مجتمع من الثقة، الاحترام، والعطاء.</div>
+      </div>
+
+      <div class="community-art" aria-label="مجتمع متنوع يساعد بعضه">
+        <svg viewBox="0 0 760 520" role="img" aria-label="مجموعة من أفراد المجتمع">
+          <defs>
+            <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#eef6ea"/><stop offset="1" stop-color="#fff5df"/></linearGradient>
+            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-opacity=".12"/></filter>
+          </defs>
+          <rect x="10" y="10" width="740" height="500" rx="50" fill="url(#bg)"/>
+          <circle cx="380" cy="235" r="136" fill="#fff" opacity=".78"/>
+          <path d="M195 390 C280 330 470 330 565 390" fill="none" stroke="#bdd4ad" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+          <!-- woman -->
+          <g transform="translate(120 160)" filter="url(#shadow)">
+            <circle cx="72" cy="72" r="44" fill="#d9a67e"/>
+            <path d="M25 70c5-60 95-70 98 8-35-18-66-15-98-8z" fill="#244f35"/>
+            <rect x="30" y="116" width="92" height="145" rx="42" fill="#2f6b47"/>
+            <path d="M48 128c20 25 50 25 63 0" fill="none" stroke="#f7efe4" stroke-width="7"/>
+          </g>
+          <!-- teenage girl -->
+          <g transform="translate(265 105)" filter="url(#shadow)">
+            <circle cx="70" cy="70" r="40" fill="#c98f68"/>
+            <path d="M25 72c12-62 89-62 91 3-31-16-56-15-91-3z" fill="#34271f"/>
+            <rect x="28" y="110" width="88" height="150" rx="40" fill="#e5aa5e"/>
+          </g>
+          <!-- teenage boy -->
+          <g transform="translate(405 108)" filter="url(#shadow)">
+            <circle cx="70" cy="70" r="40" fill="#b97b55"/>
+            <path d="M34 43c22-22 66-16 75 10-22-6-47-3-75 12z" fill="#2f2927"/>
+            <rect x="28" y="110" width="88" height="150" rx="40" fill="#7aa7a0"/>
+          </g>
+          <!-- man -->
+          <g transform="translate(535 155)" filter="url(#shadow)">
+            <circle cx="70" cy="70" r="44" fill="#b67b56"/>
+            <path d="M34 44c21-18 60-16 74 8-25-5-47-2-74 12z" fill="#242424"/>
+            <rect x="24" y="116" width="96" height="145" rx="42" fill="#274d68"/>
+          </g>
+          <!-- center hands / heart -->
+          <g transform="translate(320 320)">
+            <path d="M60 22c16-28 59-15 59 15 0 35-59 65-59 65S1 72 1 37c0-30 43-43 59-15z" fill="#fff" stroke="#2f6b47" stroke-width="4"/>
+          </g>
+          <circle cx="90" cy="90" r="12" fill="#d8e9cc"/><circle cx="670" cy="100" r="10" fill="#e7d6b8"/>
+          <circle cx="650" cy="420" r="13" fill="#d8e9cc"/><circle cx="125" cy="430" r="9" fill="#e7d6b8"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="benefits container">
+      <article><span>🛡️</span><div><strong>مجتمع موثوق</strong><p>نقدّر كل مساهمة ونشجع الاحترام.</p></div></article>
+      <article><span>🤝</span><div><strong>تبادل بدون فلوس</strong><p>خدمة بخدمة، وقت بوقت، وخبرة بخبرة.</p></div></article>
+      <article><span>🧭</span><div><strong>وصول أسهل</strong><p>اطلب أو قدّم المساعدة بخطوات واضحة.</p></div></article>
+      <article><span>🏅</span><div><strong>تقدير المساهمين</strong><p>كل خير يترك أثرًا ويستحق التقدير.</p></div></article>
+    </section>
+
+    <section id="how" class="container section-pad">
+      <div class="section-head"><span class="eyebrow">بسيطة وواضحة</span><h2>كيف تعمل بينا؟</h2></div>
+      <div class="steps">
+        <article><b>1</b><span>🫴</span><h3>اطلب أو قدّم</h3><p>انشر طلب مساعدة أو اعرض خدمة تقدر تقدمها.</p></article>
+        <article><b>2</b><span>💬</span><h3>تواصل وتفاهم</h3><p>تحدثوا داخل المنصة واتفقوا على التفاصيل.</p></article>
+        <article><b>3</b><span>💚</span><h3>تبادل المساعدة</h3><p>قدّم المساعدة أو استلمها بدون مقابل مادي.</p></article>
+      </div>
+    </section>
+
+    <section id="need" class="requests section-pad">
+      <div class="container">
+        <div class="section-head row"><div><span class="eyebrow">طلبات المجتمع</span><h2>أحتاج مساعدة</h2></div><button class="btn primary" data-open="request">+ أضف طلب</button></div>
+        <div class="filters">
+          <input id="searchNeed" type="search" placeholder="ابحث عن مساعدة..." />
+          <select id="needCategory"><option value="all">جميع التصنيفات</option><option>تعليم وتدريب</option><option>ترجمة وكتابة</option><option>تقنية وبرمجة</option><option>تصميم</option><option>إدارة وتنظيم</option></select>
+          <select><option>جميع المدن</option><option>المدينة المنورة</option><option>الرياض</option><option>جدة</option><option>الدمام</option></select>
+        </div>
+        <div class="card-grid" id="needGrid"></div>
+      </div>
+    </section>
+
+    <section id="offer" class="container section-pad">
+      <div class="section-head row"><div><span class="eyebrow">ناس مستعدة تساعد</span><h2>أقدر أساعد</h2></div><button class="btn soft" data-open="offer">+ أضف عرض</button></div>
+      <div class="card-grid people" id="offerGrid"></div>
+    </section>
+
+    <section id="categories" class="categories section-pad">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">اختَر اللي يناسبك</span><h2>التصنيفات</h2></div>
+        <div class="category-grid">
+          <button>🎓 <span>تعليم وتدريب</span></button><button>✍️ <span>ترجمة وكتابة</span></button><button>💻 <span>تقنية وبرمجة</span></button><button>🎨 <span>تصميم</span></button><button>📈 <span>تسويق وإدارة</span></button><button>🧠 <span>استشارات ومهارات</span></button><button>🛠️ <span>أعمال يدوية</span></button><button>✨ <span>أخرى</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="container section-pad dashboard-section">
+      <div class="section-head"><span class="eyebrow">داخل حسابك</span><h2>لوحة التحكم</h2></div>
+      <div class="dashboard">
+        <aside>
+          <div class="profile-mini"><div class="avatar">ح</div><strong>حنان الشريف</strong><small>عضو في مجتمع بينا</small></div>
+          <button class="active">الرئيسية</button><button>طلباتي</button><button>عروضي</button><button data-messages>الرسائل</button><button>التقييمات</button><button>الإعدادات</button>
+        </aside>
+        <div class="dashboard-main">
+          <div class="stats"><div><b>4</b><span>طلباتي</span></div><div><b>6</b><span>عروضي</span></div><div><b>12</b><span>مساعدة مكتملة</span></div><div><b>4.9</b><span>التقييم</span></div></div>
+          <div class="panel"><h3>نشاطي الأخير</h3><div class="activity"><span class="tag green">أقدر أساعد</span><strong>مساعدة في ترجمة ملف تعريفي</strong><small>آخر تحديث قبل ساعتين</small></div><div class="activity"><span class="tag pink">أحتاج مساعدة</span><strong>شرح أساسيات محاسبية</strong><small>آخر تحديث أمس</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="cta section-pad">
+      <div class="container cta-box"><div><span class="eyebrow">الخير بينا يتكاثر</span><h2>كل مهارة عندك ممكن تغيّر يوم شخص.</h2><p>انضم إلى مجتمع يساعد بعضه، ويصنع قيمة بدون ما تبدأ الحكاية من المال.</p></div><button class="btn primary big" data-open="signup">انضم الآن مجانًا</button></div>
+    </section>
+  </main>
+
+  <aside id="messagesPanel" class="messages-drawer" aria-hidden="true">
+    <div class="messages-head"><div><strong>الرسائل</strong><small>تواصل داخل بينا</small></div><button class="icon-btn" data-close-messages>×</button></div>
+    <div id="messagesList" class="messages-list"></div>
+    <form id="quickMessageForm" class="quick-message"><input name="message" placeholder="اكتب رسالة..." autocomplete="off"><button class="btn primary">إرسال</button></form>
+  </aside>
+  <div id="toast" class="toast" role="status"></div>
+
+  <footer><div class="container footer"><div><strong>بينا</strong><small>الخير يتبادل</small></div><p>نسخة تجريبية أولية — صُممت للمجتمع السعودي.</p></div></footer>
+
+  <dialog id="modal"><form method="dialog" class="modal-card"><button class="close" value="cancel">×</button><h3 id="modalTitle">ابدأ في بينا</h3><p id="modalText">هذه نسخة تجريبية. سنربطها بقاعدة البيانات والتسجيل الحقيقي في الخطوة التالية.</p><div id="modalFields"></div><button class="btn primary full modal-submit" type="submit">متابعة</button></form></dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
