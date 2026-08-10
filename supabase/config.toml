@@ -1,0 +1,4 @@
+[functions.notify-new-post]
+# Database Webhooks are authenticated with a dedicated shared secret inside the
+# function, rather than with a user's JWT.
+verify_jwt = false
