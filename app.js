@@ -82,7 +82,7 @@ modal.addEventListener('submit',async e=>{
  if(currentModal.type==='request') ok=await submitPost(fd,'need');
  else if(currentModal.type==='offer') ok=await submitPost(fd,'offer');
  else if(currentModal.type==='signup'){
-   if(sb){const {data,error}=await sb.auth.signUp({email:fd.get('email'),password:fd.get('password'),options:{data:{full_name:fd.get('name')}}});if(error){showToast(error.message);ok=false;}else{currentUser=data.user;showToast(data.session?'تم إنشاء الحساب وتسجيل الدخول':'تم إنشاء الحساب؛ تحققي من بريدك لتأكيده');}}
+   if(sb){const {data,error}=await sb.auth.signUp({email:fd.get('email'),password:fd.get('password'),options:{emailRedirectTo:'https://banan369.github.io/bina/',data:{full_name:fd.get('name')}}});if(error){showToast(error.message);ok=false;}else{currentUser=data.user;showToast(data.session?'تم إنشاء الحساب وتسجيل الدخول':'تم إنشاء الحساب؛ تحققي من بريدك لتأكيده');}}
    else showToast('تم إنشاء حساب تجريبي محلي');
  }
  else if(currentModal.type==='login'){
