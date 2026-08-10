@@ -99,13 +99,10 @@
       <div class="section-head"><span class="eyebrow">داخل حسابك</span><h2>لوحة التحكم</h2></div>
       <div class="dashboard">
         <aside>
-          <div class="profile-mini"><div class="avatar">ح</div><strong>حنان الشريف</strong><small>عضو في مجتمع بينا</small></div>
-          <button type="button" class="active">الرئيسية</button><button type="button">طلباتي</button><button type="button">عروضي</button><button type="button" data-messages>الرسائل</button><button type="button">التقييمات</button><button type="button">الإعدادات</button>
+          <div class="profile-mini"><div class="avatar" id="dashboardAvatar">ب</div><strong id="dashboardName">عضو من بينا</strong><small>عضو في مجتمع بينا</small></div>
+          <button type="button" class="active" data-dashboard-tab="home">الرئيسية</button><button type="button" data-dashboard-tab="requests">طلباتي</button><button type="button" data-dashboard-tab="offers">عروضي</button><button type="button" data-dashboard-tab="messages">الرسائل</button><button type="button" data-dashboard-tab="reviews">التقييمات</button><button type="button" data-dashboard-tab="settings">الإعدادات</button>
         </aside>
-        <div class="dashboard-main">
-          <div class="stats"><div><b>4</b><span>طلباتي</span></div><div><b>6</b><span>عروضي</span></div><div><b>12</b><span>مساعدة مكتملة</span></div><div><b>4.9</b><span>التقييم</span></div></div>
-          <div class="panel"><h3>نشاطي الأخير</h3><div class="activity"><span class="tag green">أقدر أساعد</span><strong>مساعدة في ترجمة ملف تعريفي</strong><small>آخر تحديث قبل ساعتين</small></div><div class="activity"><span class="tag pink">أحتاج مساعدة</span><strong>شرح أساسيات محاسبية</strong><small>آخر تحديث أمس</small></div></div>
-        </div>
+        <div class="dashboard-main" id="dashboardContent"><div class="empty-state">سجّل الدخول لعرض لوحة التحكم.</div></div>
       </div>
     </section>
 
@@ -116,8 +113,9 @@
 
   <aside id="messagesPanel" class="messages-drawer" aria-hidden="true">
     <div class="messages-head"><div><strong>الرسائل</strong><small>تواصل داخل بينا</small></div><button type="button" class="icon-btn" data-close-messages aria-label="إغلاق الرسائل">×</button></div>
+    <div id="messageThreads" class="message-threads"></div>
     <div id="messagesList" class="messages-list"></div>
-    <form id="quickMessageForm" class="quick-message"><input name="message" placeholder="اكتب رسالة..." autocomplete="off"><button class="btn primary">إرسال</button></form>
+    <form id="quickMessageForm" class="quick-message"><input name="message" placeholder="اختر محادثة أولًا..." autocomplete="off" disabled><button class="btn primary" disabled>إرسال</button></form>
   </aside>
   <div id="toast" class="toast" role="status"></div>
 
