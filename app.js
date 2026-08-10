@@ -11,8 +11,8 @@ const supabaseEnabled=Boolean(cfg.url&&cfg.anonKey&&window.supabase);
 const sb=supabaseEnabled?window.supabase.createClient(cfg.url,cfg.anonKey):null;
 
 const needGrid=document.getElementById('needGrid'),offerGrid=document.getElementById('offerGrid');
-function renderNeeds(list=needs){needGrid.innerHTML=list.map(x=>`<article class="request-card" data-id="${x.id}"><header><div><span class="tag pink">أحتاج مساعدة</span><h3>${escapeHtml(x.title)}</h3></div><button class="icon-btn save-btn" aria-label="حفظ">♡</button></header><p>${escapeHtml(x.desc)}</p><div class="meta"><span>📍 ${escapeHtml(x.city||'غير محدد')}</span><span>🕒 ${escapeHtml(x.time||'الآن')}</span><span>🏷️ ${escapeHtml(x.cat)}</span></div><button class="text-link contact-request">أقدر أساعد في هذا الطلب ←</button></article>`).join('');}
-function renderOffers(list=offers){offerGrid.innerHTML=list.map(x=>`<article class="person-card" data-id="${x.id}"><div class="avatar">${escapeHtml((x.name||'م')[0])}</div><h3>${escapeHtml(x.name||'عضو من بينا')}</h3><p>${escapeHtml(x.skill)}</p><div class="rating">⭐ ${escapeHtml(x.rate||'جديد')}</div><div class="meta center"><span>📍 ${escapeHtml(x.city||'غير محدد')}</span><span>متاح للمساعدة</span></div><button class="btn soft mini contact-offer">تواصل</button></article>`).join('');}
+function renderNeeds(list=needs){needGrid.innerHTML=list.map(x=>`<article class="request-card" data-id="${x.id}"><header><div><span class="tag pink">أحتاج مساعدة</span><h3>${escapeHtml(x.title)}</h3></div><button type="button" class="icon-btn save-btn" aria-label="حفظ">♡</button></header><p>${escapeHtml(x.desc)}</p><div class="meta"><span>📍 ${escapeHtml(x.city||'غير محدد')}</span><span>🕒 ${escapeHtml(x.time||'الآن')}</span><span>🏷️ ${escapeHtml(x.cat)}</span></div><button type="button" class="text-link contact-request">أقدر أساعد في هذا الطلب ←</button></article>`).join('');}
+function renderOffers(list=offers){offerGrid.innerHTML=list.map(x=>`<article class="person-card" data-id="${x.id}"><div class="avatar">${escapeHtml((x.name||'م')[0])}</div><h3>${escapeHtml(x.name||'عضو من بينا')}</h3><p>${escapeHtml(x.skill)}</p><div class="rating">⭐ ${escapeHtml(x.rate||'جديد')}</div><div class="meta center"><span>📍 ${escapeHtml(x.city||'غير محدد')}</span><span>متاح للمساعدة</span></div><button type="button" class="btn soft mini contact-offer">تواصل</button></article>`).join('');}
 
 async function hydrateFromSupabase(){
  if(!sb){renderNeeds();renderOffers();return;}
@@ -42,8 +42,10 @@ const configs={
  offer:['إضافة عرض مساعدة','ما الشيء الذي تستطيع تقديمه للمجتمع؟',`<input name="skill" placeholder="عنوان المساعدة التي تقدمها" required><select name="cat" required>${options(categories,'اختر التصنيف')}</select><select name="city" required>${options(cities,'اختر المدينة')}</select><textarea name="desc" placeholder="تفاصيل مختصرة" required></textarea>`],
  message:['إرسال رسالة','ابدأ تواصلًا محترمًا وواضحًا داخل بينا.','<textarea name="message" placeholder="اكتب رسالتك..." required></textarea>']
 };
-function openModal(type,context={}){currentModal={type,context};const c=configs[type];title.textContent=c[0];text.textContent=c[1];fields.innerHTML=c[2];submitBtn.textContent=type==='request'?'نشر الطلب':type==='offer'?'نشر العرض':type==='message'?'إرسال':'متابعة';modal.showModal();}
+function openModal(type,context={}){const c=configs[type];if(!c)return;currentModal={type,context};title.textContent=c[0];text.textContent=c[1];fields.innerHTML=c[2];submitBtn.textContent=type==='request'?'نشر الطلب':type==='offer'?'نشر العرض':type==='message'?'إرسال':'متابعة';if(!modal.open)modal.showModal();fields.querySelector('input, select, textarea')?.focus();}
 document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>openModal(b.dataset.open));
+document.querySelector('[data-close-modal]').addEventListener('click',()=>modal.close());
+modal.addEventListener('click',e=>{if(e.target===modal)modal.close();});
 
 async function requireAuth(){if(!supabaseEnabled)return true;if(currentUser)return true;showToast('سجلي الدخول أولًا لإتمام هذه الخطوة');openModal('login');return false;}
 async function submitPost(fd,type){

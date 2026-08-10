@@ -17,7 +17,7 @@
         <span class="brand-mark">بينا</span>
         <small>الخير يتبادل</small>
       </a>
-      <button class="menu-toggle" aria-label="فتح القائمة">☰</button>
+      <button type="button" class="menu-toggle" aria-label="فتح القائمة">☰</button>
       <div class="nav-links">
         <a class="active" href="#home">الرئيسية</a>
         <a href="#need">أحتاج مساعدة</a>
@@ -27,8 +27,8 @@
         <a href="#about">عن بينا</a>
       </div>
       <div class="nav-actions">
-        <button class="btn ghost" data-messages>الرسائل</button><button class="btn ghost" data-open="login">تسجيل دخول</button>
-        <button class="btn primary" data-open="signup">سجل الآن</button>
+        <button type="button" class="btn ghost" data-messages>الرسائل</button><button type="button" class="btn ghost" data-open="login">تسجيل دخول</button>
+        <button type="button" class="btn primary" data-open="signup">سجل الآن</button>
       </div>
     </nav>
   </header>
@@ -42,8 +42,8 @@
         <h2>بينا نساعد بعض.</h2>
         <p>قدّم اللي تعرفه، واطلب اللي تحتاجه... بدون مقابل مادي.</p>
         <div class="hero-actions">
-          <button class="btn primary big" data-scroll="#need">أحتاج مساعدة</button>
-          <button class="btn soft big" data-scroll="#offer">أقدر أساعد</button>
+          <button type="button" class="btn primary big" data-scroll="#need">أحتاج مساعدة</button>
+          <button type="button" class="btn soft big" data-scroll="#offer">أقدر أساعد</button>
         </div>
         <div class="trust-line">مجتمع من الثقة، الاحترام، والعطاء.</div>
       </div>
@@ -110,7 +110,7 @@
 
     <section id="need" class="requests section-pad">
       <div class="container">
-        <div class="section-head row"><div><span class="eyebrow">طلبات المجتمع</span><h2>أحتاج مساعدة</h2></div><button class="btn primary" data-open="request">+ أضف طلب</button></div>
+        <div class="section-head row"><div><span class="eyebrow">طلبات المجتمع</span><h2>أحتاج مساعدة</h2></div><button type="button" class="btn primary" data-open="request">+ أضف طلب</button></div>
         <div class="filters">
           <input id="searchNeed" type="search" placeholder="ابحث عن مساعدة..." />
           <select id="needCategory"><option value="all">جميع التصنيفات</option><option>تعليم وتدريب</option><option>ترجمة وكتابة</option><option>تقنية وبرمجة</option><option>تصميم</option><option>إدارة وتنظيم</option></select>
@@ -121,7 +121,7 @@
     </section>
 
     <section id="offer" class="container section-pad">
-      <div class="section-head row"><div><span class="eyebrow">ناس مستعدة تساعد</span><h2>أقدر أساعد</h2></div><button class="btn soft" data-open="offer">+ أضف عرض</button></div>
+      <div class="section-head row"><div><span class="eyebrow">ناس مستعدة تساعد</span><h2>أقدر أساعد</h2></div><button type="button" class="btn soft" data-open="offer">+ أضف عرض</button></div>
       <div class="card-grid people" id="offerGrid"></div>
     </section>
 
@@ -139,7 +139,7 @@
       <div class="dashboard">
         <aside>
           <div class="profile-mini"><div class="avatar">ح</div><strong>حنان الشريف</strong><small>عضو في مجتمع بينا</small></div>
-          <button class="active">الرئيسية</button><button>طلباتي</button><button>عروضي</button><button data-messages>الرسائل</button><button>التقييمات</button><button>الإعدادات</button>
+          <button type="button" class="active">الرئيسية</button><button type="button">طلباتي</button><button type="button">عروضي</button><button type="button" data-messages>الرسائل</button><button type="button">التقييمات</button><button type="button">الإعدادات</button>
         </aside>
         <div class="dashboard-main">
           <div class="stats"><div><b>4</b><span>طلباتي</span></div><div><b>6</b><span>عروضي</span></div><div><b>12</b><span>مساعدة مكتملة</span></div><div><b>4.9</b><span>التقييم</span></div></div>
@@ -149,12 +149,12 @@
     </section>
 
     <section id="about" class="cta section-pad">
-      <div class="container cta-box"><div><span class="eyebrow">الخير بينا يتكاثر</span><h2>كل مهارة عندك ممكن تغيّر يوم شخص.</h2><p>انضم إلى مجتمع يساعد بعضه، ويصنع قيمة بدون ما تبدأ الحكاية من المال.</p></div><button class="btn primary big" data-open="signup">انضم الآن مجانًا</button></div>
+      <div class="container cta-box"><div><span class="eyebrow">الخير بينا يتكاثر</span><h2>كل مهارة عندك ممكن تغيّر يوم شخص.</h2><p>انضم إلى مجتمع يساعد بعضه، ويصنع قيمة بدون ما تبدأ الحكاية من المال.</p></div><button type="button" class="btn primary big" data-open="signup">انضم الآن مجانًا</button></div>
     </section>
   </main>
 
   <aside id="messagesPanel" class="messages-drawer" aria-hidden="true">
-    <div class="messages-head"><div><strong>الرسائل</strong><small>تواصل داخل بينا</small></div><button class="icon-btn" data-close-messages>×</button></div>
+    <div class="messages-head"><div><strong>الرسائل</strong><small>تواصل داخل بينا</small></div><button type="button" class="icon-btn" data-close-messages aria-label="إغلاق الرسائل">×</button></div>
     <div id="messagesList" class="messages-list"></div>
     <form id="quickMessageForm" class="quick-message"><input name="message" placeholder="اكتب رسالة..." autocomplete="off"><button class="btn primary">إرسال</button></form>
   </aside>
@@ -162,15 +162,15 @@
 
   <footer><div class="container footer"><div><strong>بينا</strong><small>الخير يتبادل</small></div><p>نسخة تجريبية أولية — صُممت للمجتمع السعودي.</p></div></footer>
 
-  <<dialog id="modal">
-  <form method="dialog" class="modal-card">
-    <button type="button" class="close" aria-label="إغلاق" onclick="document.getElementById('modal').close()">×</button>
-    <h3 id="modalTitle">بينا</h3>
-    <p id="modalText"></p>
-    <div id="modalFields"></div>
-    <button class="btn primary full modal-submit" type="submit">متابعة</button>
-  </form>
-</dialog>
+  <dialog id="modal" aria-labelledby="modalTitle" aria-describedby="modalText">
+    <form method="dialog" class="modal-card">
+      <button type="button" class="close" data-close-modal aria-label="إغلاق">×</button>
+      <h3 id="modalTitle">بينا</h3>
+      <p id="modalText"></p>
+      <div id="modalFields"></div>
+      <button class="btn primary full modal-submit" type="submit">متابعة</button>
+    </form>
+  </dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
