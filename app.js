@@ -5,13 +5,7 @@ const seedNeeds=[
  {id:crypto.randomUUID(),title:'مساعدة في حل واجب رياضيات',cat:'تعليم وتدريب',city:'الدمام',time:'قبل ساعتين',desc:'أحتاج شرح بعض المسائل بطريقة مبسطة لطالبة في المرحلة الثانوية.'},
  {id:crypto.randomUUID(),title:'نصيحة في إدارة الوقت',cat:'إدارة وتنظيم',city:'المدينة المنورة',time:'قبل 3 ساعات',desc:'أحتاج أفكار عملية لتنظيم أسبوع مزدحم بين الدراسة والالتزامات.'}
 ];
-const seedOffers=[
- {id:crypto.randomUUID(),name:'سارة محمد',skill:'شرح الرياضيات للمرحلة الثانوية',cat:'تعليم وتدريب',city:'الرياض',rate:'5.0'},
- {id:crypto.randomUUID(),name:'أحمد علي',skill:'تصميم منشورات وسير ذاتية',cat:'تصميم',city:'جدة',rate:'4.9'},
- {id:crypto.randomUUID(),name:'نورة عبدالله',skill:'ترجمة ومراجعة لغوية',cat:'ترجمة وكتابة',city:'المدينة المنورة',rate:'5.0'},
- {id:crypto.randomUUID(),name:'خالد سالم',skill:'حل مشكلات الكمبيوتر والبرامج',cat:'تقنية وبرمجة',city:'الدمام',rate:'4.8'}
-];
-function load(key,seed){try{const raw=localStorage.getItem(key);if(raw)return JSON.parse(raw);}catch{} localStorage.setItem(key,JSON.stringify(seed));return seed;}
+const seedOffers=[];function load(key,seed){try{const raw=localStorage.getItem(key);if(raw)return JSON.parse(raw);}catch{} localStorage.setItem(key,JSON.stringify(seed));return seed;}
 function save(key,data){localStorage.setItem(key,JSON.stringify(data));}
 function escapeHtml(s=''){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c]));}
 function relativeTime(date){const d=new Date(date),mins=Math.max(0,Math.floor((Date.now()-d)/60000));if(mins<1)return 'الآن';if(mins<60)return `قبل ${mins} دقيقة`;const h=Math.floor(mins/60);if(h<24)return `قبل ${h} ساعة`;return `قبل ${Math.floor(h/24)} يوم`;}
