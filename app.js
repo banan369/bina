@@ -1,5 +1,4 @@
-const STORAGE_KEYS={needs:'bina_needs',offers:'bina_offers',messages:'bina_messages'};
-const seedNeeds=[];
+const STORAGE_KEYS={needs:'bina_needs_v2',offers:'bina_offers_v2',messages:'bina_messages_v2'};const seedNeeds=[];
 const seedOffers=[];function load(key,seed){try{const raw=localStorage.getItem(key);if(raw)return JSON.parse(raw);}catch{} localStorage.setItem(key,JSON.stringify(seed));return seed;}
 function save(key,data){localStorage.setItem(key,JSON.stringify(data));}
 function escapeHtml(s=''){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c]));}
