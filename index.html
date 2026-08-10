@@ -162,7 +162,7 @@
 
   <footer><div class="container footer"><div><strong>بينا</strong><small>الخير يتبادل</small></div><p>نسخة تجريبية أولية — صُممت للمجتمع السعودي.</p></div></footer>
 
-  <dialog id="modal"><form method="dialog" class="modal-card"><×</button><h3 id="modalTitle">ابدأ <button class="close" value="cancel" formmethod="dialog">
+  <dialog id="modal"><form method="dialog" class="modal-card"><×</button><h3 id="modalTitle">ابدأ <button type="button" class="close" onclick="document.getElementById('modal').close()">
 ولا تغيّري باقي السطر. بعدها اضغطي Commit changes بينا</h3><p id="modalText">هذه نسخة تجريبية. سنربطها بقاعدة البيانات والتسجيل الحقيقي في الخطوة التالية.</p><div id="modalFields"></div><button class="btn primary full modal-submit" type="submit">متابعة</button></form></dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
