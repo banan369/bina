@@ -17,9 +17,8 @@ function renderOffers(list=offers){offerGrid.innerHTML=list.map(x=>`<article cla
 async function hydrateFromSupabase(){
  if(!sb){renderNeeds();renderOffers();return;}
  const [reqRes,offRes]=await Promise.all([
-   sb.from('requests').select('id,title,description,category,city,created_at,user_id,profiles(full_name)').eq('status','نشط').order('created_at',{ascending:false}),
-   sb.from('offers').select('id,title,description,category,city,created_at,user_id,profiles(full_name)').eq('status','نشط').order('created_at',{ascending:false})
- ]);
+sb.from('requests').select('id,title,description,category,city,created_at,user_id,status').eq('status','نشط').order('created_at',{ascending:false}),
+sb.from('offers').select('id,title,description,category,city,created_at,user_id,status').eq('status','نشط').order('created_at',{ascending:false}) ]);
  if(reqRes.error||offRes.error){console.warn(reqRes.error||offRes.error);showToast('تعذر تحميل البيانات السحابية؛ تم تشغيل النسخة المحلية');renderNeeds();renderOffers();return;}
  needs=(reqRes.data||[]).map(x=>({id:x.id,title:x.title,desc:x.description,cat:x.category,city:x.city,time:relativeTime(x.created_at),userId:x.user_id}));
  offers=(offRes.data||[]).map(x=>({id:x.id,name:x.profiles?.full_name||'عضو من بينا',skill:x.title,desc:x.description,cat:x.category,city:x.city,rate:'جديد',userId:x.user_id}));
