@@ -1,11 +1,5 @@
 const STORAGE_KEYS={needs:'bina_needs',offers:'bina_offers',messages:'bina_messages'};
-const seedNeeds=[
- {id:crypto.randomUUID(),title:'مساعدة في إعداد عرض بوربوينت',cat:'تعليم وتدريب',city:'الرياض',time:'قبل 30 دقيقة',desc:'أحتاج مساعدة في ترتيب عرض بسيط لمشروع جامعي وتصميمه بشكل واضح.'},
- {id:crypto.randomUUID(),title:'ترجمة نص من الإنجليزية للعربية',cat:'ترجمة وكتابة',city:'جدة',time:'قبل ساعة',desc:'نص عام قصير وأحتاج ترجمة عربية سليمة وواضحة.'},
- {id:crypto.randomUUID(),title:'مساعدة في حل واجب رياضيات',cat:'تعليم وتدريب',city:'الدمام',time:'قبل ساعتين',desc:'أحتاج شرح بعض المسائل بطريقة مبسطة لطالبة في المرحلة الثانوية.'},
- {id:crypto.randomUUID(),title:'نصيحة في إدارة الوقت',cat:'إدارة وتنظيم',city:'المدينة المنورة',time:'قبل 3 ساعات',desc:'أحتاج أفكار عملية لتنظيم أسبوع مزدحم بين الدراسة والالتزامات.'}
-];
-const seedOffers=[];function load(key,seed){try{const raw=localStorage.getItem(key);if(raw)return JSON.parse(raw);}catch{} localStorage.setItem(key,JSON.stringify(seed));return seed;}
+const seedNeeds=[];const seedOffers=[];function load(key,seed){try{const raw=localStorage.getItem(key);if(raw)return JSON.parse(raw);}catch{} localStorage.setItem(key,JSON.stringify(seed));return seed;}
 function save(key,data){localStorage.setItem(key,JSON.stringify(data));}
 function escapeHtml(s=''){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c]));}
 function relativeTime(date){const d=new Date(date),mins=Math.max(0,Math.floor((Date.now()-d)/60000));if(mins<1)return 'الآن';if(mins<60)return `قبل ${mins} دقيقة`;const h=Math.floor(mins/60);if(h<24)return `قبل ${h} ساعة`;return `قبل ${Math.floor(h/24)} يوم`;}
