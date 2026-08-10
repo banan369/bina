@@ -1,5 +1,6 @@
 const STORAGE_KEYS={needs:'bina_needs',offers:'bina_offers',messages:'bina_messages'};
-const seedNeeds=[];const seedOffers=[];function load(key,seed){try{const raw=localStorage.getItem(key);if(raw)return JSON.parse(raw);}catch{} localStorage.setItem(key,JSON.stringify(seed));return seed;}
+const seedNeeds=[];
+const seedOffers=[];function load(key,seed){try{const raw=localStorage.getItem(key);if(raw)return JSON.parse(raw);}catch{} localStorage.setItem(key,JSON.stringify(seed));return seed;}
 function save(key,data){localStorage.setItem(key,JSON.stringify(data));}
 function escapeHtml(s=''){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c]));}
 function relativeTime(date){const d=new Date(date),mins=Math.max(0,Math.floor((Date.now()-d)/60000));if(mins<1)return 'الآن';if(mins<60)return `قبل ${mins} دقيقة`;const h=Math.floor(mins/60);if(h<24)return `قبل ${h} ساعة`;return `قبل ${Math.floor(h/24)} يوم`;}
