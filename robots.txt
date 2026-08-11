@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://banan369.github.io/bina/sitemap.xml
